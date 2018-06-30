@@ -35,6 +35,16 @@ public class Iluminaçao implements Serializable {
     private Date dataacende;
     @Temporal(TemporalType.DATE)
     private Date dataapaga;
+    
+    private int numLampada;
+
+    public int getNumLampada() {
+        return numLampada;
+    }
+
+    public void setNumLampada(int numLampada) {
+        this.numLampada = numLampada;
+    }
 
     public Date getDataapagar() {
         return dataapaga;
