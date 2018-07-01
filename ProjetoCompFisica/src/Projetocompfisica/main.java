@@ -21,7 +21,8 @@ public class main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        new GUI();
+        Interface i = new Interface();
+        i.setVisible(true);
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
         Date hora = Calendar.getInstance().getTime(); // Ou qualquer outra forma que tem
         String dataFormatada = sdf.format(hora);
