@@ -19,7 +19,7 @@ public class ThreadSensor extends Thread{
         AcessaArduino arduino = new AcessaArduino();
          try {
             
-            System.out.println("porta detectada: " + arduino.getPortaSelecionada());
+            System.out.println("porta detectada: sensor" + arduino.getPortaSelecionada());
             
         } catch (Exception e) {
             System.out.println("Erro ao acionar o arduino");
@@ -29,7 +29,12 @@ public class ThreadSensor extends Thread{
             try {
                 String sensor;
                 sensor = arduino.getDadosArduino();
-                //System.out.println("sensor");
+                String[] splitado;
+                splitado=sensor.split(" =");
+                for(int i = 0;i<splitado.length; i++){
+                    System.out.println("split:"+ splitado[i]);
+                }
+                System.out.println("senso:" +sensor);
                 ThreadSensor.sleep(2000);
             } catch (InterruptedException ex) {
                 Logger.getLogger(ThreadSensor.class.getName()).log(Level.SEVERE, null, ex);

@@ -45,6 +45,22 @@ public class IluminaçaoDao {
     }
     
 
+
+//    public BigDecimal soma(int numlampada){
+//        EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjetoCompFisicaPU");
+//        EntityManager em = emf.createEntityManager();
+//    Query query = em.createNativeQuery("select sum(tempoaceso) from iluminaÇao where numlampada = "+numlampada);
+//    BigDecimal soma;
+//    soma =  (BigDecimal) query.getSingleResult();
+//    return soma;}
+
+
+//    public long soma(int numLampada){
+//        EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjetoCompFisicaPU");
+//        EntityManager em = emf.createEntityManager();
+//    Query query = em.createNativeQuery("select sum(tempoaceso) from iluminaÇao where numLampada = "+numLampada);
+//        return 0;
+
     public BigDecimal soma(int numlampada){
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjetoCompFisicaPU");
         EntityManager em = emf.createEntityManager();
@@ -53,6 +69,8 @@ public class IluminaçaoDao {
     soma =  (BigDecimal) query.getSingleResult();
     return soma;
     }
+
+ 
 
     
     
