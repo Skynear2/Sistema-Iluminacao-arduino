@@ -53,6 +53,7 @@ public class main {
         //List<Iluminaçao> lista;
         //linao vei
         //lista = manager.lista();
+        
         System.out.println("Teste select sum: "+ soma);
         //System.out.println("teste lista: "+ lista.get(1).getNumLampada() + lista.get(1).getTempoAceso());
         System.out.println("fim teste banco");

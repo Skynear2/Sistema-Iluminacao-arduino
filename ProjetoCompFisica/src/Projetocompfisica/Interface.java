@@ -220,6 +220,9 @@ public class Interface extends javax.swing.JFrame {
         }
         else{
         acessaArduino.setDataToArduino(acessaArduino.getSerialPort(), "8");
+            String sensor;
+            sensor = acessaArduino.getDadosArduino();
+            System.out.println("SENSOR INTERFACE : "+ sensor);
             botao4.setForeground(Color.red);
             tempo4=tempo4-System.currentTimeMillis();
             tempo4=tempo4*-1;
@@ -269,6 +272,13 @@ public class Interface extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Interface().setVisible(true);
+                String sensor;
+                sensor = this.acessaArduino.getDadosArduino();
+                String[] splitado;
+                splitado=sensor.split(" =");
+                for(int i = 0;i<splitado.length; i++){
+                    System.out.println("split:"+ splitado[i]);
+                }
             }
         });
     }

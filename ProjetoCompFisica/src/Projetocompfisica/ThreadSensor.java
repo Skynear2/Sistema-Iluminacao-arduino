@@ -35,7 +35,7 @@ public class ThreadSensor extends Thread{
                     System.out.println("split:"+ splitado[i]);
                 }
                 System.out.println("senso:" +sensor);
-                ThreadSensor.sleep(2000);
+                ThreadSensor.sleep(1000);
             } catch (InterruptedException ex) {
                 Logger.getLogger(ThreadSensor.class.getName()).log(Level.SEVERE, null, ex);
             }
