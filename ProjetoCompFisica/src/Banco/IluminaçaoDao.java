@@ -45,6 +45,7 @@ public class IluminaçaoDao {
     }
     
 
+<<<<<<< HEAD
 //    public BigDecimal soma(int numlampada){
 //        EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjetoCompFisicaPU");
 //        EntityManager em = emf.createEntityManager();
@@ -59,6 +60,15 @@ public class IluminaçaoDao {
         EntityManager em = emf.createEntityManager();
     Query query = em.createNativeQuery("select sum(tempoaceso) from iluminaÇao where numLampada = "+numLampada);
         return 0;
+=======
+    public BigDecimal soma(int numlampada){
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjetoCompFisicaPU");
+        EntityManager em = emf.createEntityManager();
+    Query query = em.createNativeQuery("select sum(tempoaceso) from iluminaÇao where numlampada = "+numlampada);
+    BigDecimal soma;
+    soma =  (BigDecimal) query.getSingleResult();
+    return soma;
+>>>>>>> 4ec38cfa4d4949a74115bbe2498b1328448eac47
     }
 
  

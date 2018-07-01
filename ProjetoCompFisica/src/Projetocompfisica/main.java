@@ -41,13 +41,18 @@ public class main {
         teste.setTempoAceso(300);
         ilu.persist(teste);
         IluminaçaoDao  manager = new IluminaçaoDao();
+<<<<<<< HEAD
 
         BigDecimal soma = manager.soma(1);
 
         //long soma = manager.soma(1);
 
+=======
+        BigDecimal soma = manager.soma(1);
+>>>>>>> 4ec38cfa4d4949a74115bbe2498b1328448eac47
         //List<Iluminaçao> lista;
-        //lista = manager.lista();
+        //linao vei
+        sta = manager.lista();
         System.out.println("Teste select sum: "+ soma);
         //System.out.println("teste lista: "+ lista.get(1).getNumLampada() + lista.get(1).getTempoAceso());
         System.out.println("fim teste banco");
