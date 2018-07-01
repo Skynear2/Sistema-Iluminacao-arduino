@@ -26,6 +26,13 @@ public class Interface extends javax.swing.JFrame {
         long tempo4;
         IluminaçaoDao ilu = new IluminaçaoDao();
         Iluminaçao reg = new Iluminaçao();
+        
+        public void windowClosing(java.awt.event.WindowEvent e){
+          acessaArduino.setDataToArduino(acessaArduino.getSerialPort(), "2");  
+          acessaArduino.setDataToArduino(acessaArduino.getSerialPort(), "4");
+          acessaArduino.setDataToArduino(acessaArduino.getSerialPort(), "6");
+          acessaArduino.setDataToArduino(acessaArduino.getSerialPort(), "8");
+        }
        
 
     
