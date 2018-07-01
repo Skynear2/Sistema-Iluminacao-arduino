@@ -262,20 +262,10 @@ public class Interface extends javax.swing.JFrame {
             tempo2=System.currentTimeMillis();
         }
         else{
-<<<<<<< HEAD
-            acessaArduino.setDataToArduino(acessaArduino.getSerialPort(), "4");
-            botao2.setForeground(Color.red);
-            tempo2=tempo2-System.currentTimeMillis();
-            tempo2=tempo2*-1;
-            tempo2=TimeUnit.MILLISECONDS.toSeconds(tempo2);
-            System.out.println(tempo2);
-            reg.setNumLampada(2);
-            reg.setTempoAceso(tempo2);
-=======
         acessaArduino.setDataToArduino(acessaArduino.getSerialPort(), "8");
             String sensor;
             sensor = acessaArduino.getDadosArduino();
-            System.out.println("SENSOR INTERFACE : "+ sensor);
+            
             botao4.setForeground(Color.red);
             tempo4=tempo4-System.currentTimeMillis();
             tempo4=tempo4*-1;
@@ -283,10 +273,9 @@ public class Interface extends javax.swing.JFrame {
             System.out.println(tempo4);
             reg.setNumLampada(4);
             reg.setTempoAceso(tempo4);
->>>>>>> 9644f3f7e1d87e071549de75e4c543bb85d731dd
             ilu.persist(reg);
         }
-    }//GEN-LAST:event_botao2ActionPerformed
+    }
 
     private void botao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao1ActionPerformed
         if (botao1.isSelected()){
@@ -307,21 +296,14 @@ public class Interface extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_botao1ActionPerformed
 
-<<<<<<< HEAD
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         // TODO add your handling code here:
-        while(true){
-        System.out.println("PRINTA POHA");}
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+        
+    }
 
     private void label1ComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_label1ComponentShown
         
-    }//GEN-LAST:event_label1ComponentShown
-=======
-    private void botao5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botao5ActionPerformed
->>>>>>> 9ffed0c5bb21225e88161a163e34cf47e8206a62
+    }/
 
     /**
      * @param args the command line arguments
@@ -369,9 +351,7 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JPanel jPanel1;
-<<<<<<< HEAD
     private java.awt.Label label1;
-=======
->>>>>>> 9ffed0c5bb21225e88161a163e34cf47e8206a62
-    // End of variables declaration//GEN-END:variables
+
+    // End of variables declaration//
 }
