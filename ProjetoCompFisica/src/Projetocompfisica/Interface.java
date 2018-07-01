@@ -7,6 +7,8 @@ package Projetocompfisica;
 
 import Arduino.AcessaArduino;
 import java.awt.Color;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
     
 /**
@@ -16,7 +18,10 @@ import java.awt.Color;
 public class Interface extends javax.swing.JFrame {
 
         AcessaArduino acessaArduino;
-        
+        long tempo1;
+        long tempo2;
+        long tempo3;
+        long tempo4;
        
 
     
@@ -129,10 +134,15 @@ public class Interface extends javax.swing.JFrame {
         if (botao1.isSelected()){
             acessaArduino.setDataToArduino(acessaArduino.getSerialPort(), "1");
             botao1.setForeground(Color.green);
-        }
+            tempo1=System.currentTimeMillis();
+            }
         else{
         acessaArduino.setDataToArduino(acessaArduino.getSerialPort(), "2");
             botao1.setForeground(Color.red);
+            tempo1=tempo1-System.currentTimeMillis();
+            tempo1=tempo1*-1;
+            tempo1=TimeUnit.MILLISECONDS.toSeconds(tempo1);
+            System.out.println(tempo1);
         }
     }//GEN-LAST:event_botao1ActionPerformed
 
@@ -140,10 +150,15 @@ public class Interface extends javax.swing.JFrame {
        if (botao2.isSelected()){
             acessaArduino.setDataToArduino(acessaArduino.getSerialPort(), "3");
             botao2.setForeground(Color.green);
+            tempo2=System.currentTimeMillis();
         }
         else{
         acessaArduino.setDataToArduino(acessaArduino.getSerialPort(), "4");
             botao2.setForeground(Color.red);
+            tempo2=tempo2-System.currentTimeMillis();
+            tempo2=tempo2*-1;
+            tempo2=TimeUnit.MILLISECONDS.toSeconds(tempo2);
+            System.out.println(tempo2);
         }       
     }//GEN-LAST:event_botao2ActionPerformed
 
@@ -151,10 +166,15 @@ public class Interface extends javax.swing.JFrame {
         if (botao3.isSelected()){
             acessaArduino.setDataToArduino(acessaArduino.getSerialPort(), "5");
             botao3.setForeground(Color.green);
+            tempo3=System.currentTimeMillis();
         }
         else{
         acessaArduino.setDataToArduino(acessaArduino.getSerialPort(), "6");
             botao3.setForeground(Color.red);
+            tempo3=tempo3-System.currentTimeMillis();
+            tempo3=tempo3*-1;
+            tempo3=TimeUnit.MILLISECONDS.toSeconds(tempo3);
+            System.out.println(tempo3);
         }        // TODO add your handling code here:
     }//GEN-LAST:event_botao3ActionPerformed
 
@@ -162,10 +182,15 @@ public class Interface extends javax.swing.JFrame {
         if (botao4.isSelected()){
             acessaArduino.setDataToArduino(acessaArduino.getSerialPort(), "7");
             botao4.setForeground(Color.green);
+            tempo4=System.currentTimeMillis();
         }
         else{
         acessaArduino.setDataToArduino(acessaArduino.getSerialPort(), "8");
             botao4.setForeground(Color.red);
+            tempo4=tempo4-System.currentTimeMillis();
+            tempo4=tempo4*-1;
+            tempo4=TimeUnit.MILLISECONDS.toSeconds(tempo4);
+            System.out.println(tempo4);
         }        // TODO add your handling code here:
     }//GEN-LAST:event_botao4ActionPerformed
 
