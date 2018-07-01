@@ -25,7 +25,7 @@ public class Iluminaçao implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private int TempoAceso;
+    private long TempoAceso;
     private int numLampada;
 
     public int getNumLampada() {
@@ -36,11 +36,11 @@ public class Iluminaçao implements Serializable {
         this.numLampada = numLampada;
     }
 
-    public int getTempoAceso() {
+    public long getTempoAceso() {
         return TempoAceso;
     }
 
-    public void setTempoAceso(int TempoAceso) {
+    public void setTempoAceso(long TempoAceso) {
         this.TempoAceso = TempoAceso;
     }
 

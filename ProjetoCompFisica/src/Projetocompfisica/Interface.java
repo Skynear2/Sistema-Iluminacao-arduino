@@ -6,6 +6,8 @@
 package Projetocompfisica;
 
 import Arduino.AcessaArduino;
+import Banco.Iluminaçao;
+import Banco.IluminaçaoDao;
 import java.awt.Color;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -22,6 +24,8 @@ public class Interface extends javax.swing.JFrame {
         long tempo2;
         long tempo3;
         long tempo4;
+        IluminaçaoDao ilu = new IluminaçaoDao();
+        Iluminaçao reg = new Iluminaçao();
        
 
     
@@ -143,6 +147,9 @@ public class Interface extends javax.swing.JFrame {
             tempo1=tempo1*-1;
             tempo1=TimeUnit.MILLISECONDS.toSeconds(tempo1);
             System.out.println(tempo1);
+            reg.setNumLampada(1);
+            reg.setTempoAceso(tempo1);
+            ilu.persist(reg);
         }
     }//GEN-LAST:event_botao1ActionPerformed
 
@@ -159,6 +166,9 @@ public class Interface extends javax.swing.JFrame {
             tempo2=tempo2*-1;
             tempo2=TimeUnit.MILLISECONDS.toSeconds(tempo2);
             System.out.println(tempo2);
+            reg.setNumLampada(2);
+            reg.setTempoAceso(tempo2);
+            ilu.persist(reg);
         }       
     }//GEN-LAST:event_botao2ActionPerformed
 
@@ -175,6 +185,9 @@ public class Interface extends javax.swing.JFrame {
             tempo3=tempo3*-1;
             tempo3=TimeUnit.MILLISECONDS.toSeconds(tempo3);
             System.out.println(tempo3);
+            reg.setNumLampada(3);
+            reg.setTempoAceso(tempo3);
+            ilu.persist(reg);
         }        // TODO add your handling code here:
     }//GEN-LAST:event_botao3ActionPerformed
 
@@ -191,6 +204,9 @@ public class Interface extends javax.swing.JFrame {
             tempo4=tempo4*-1;
             tempo4=TimeUnit.MILLISECONDS.toSeconds(tempo4);
             System.out.println(tempo4);
+            reg.setNumLampada(4);
+            reg.setTempoAceso(tempo4);
+            ilu.persist(reg);
         }        // TODO add your handling code here:
     }//GEN-LAST:event_botao4ActionPerformed
 
