@@ -29,7 +29,7 @@ public class ThreadSensor extends Thread{
             try {
                 String sensor;
                 sensor = arduino.getDadosArduino();
-                System.out.println("sensor");
+                //System.out.println("sensor");
                 ThreadSensor.sleep(2000);
             } catch (InterruptedException ex) {
                 Logger.getLogger(ThreadSensor.class.getName()).log(Level.SEVERE, null, ex);

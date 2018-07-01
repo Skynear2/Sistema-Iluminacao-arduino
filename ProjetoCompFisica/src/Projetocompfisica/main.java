@@ -7,6 +7,7 @@ package Projetocompfisica;
 
 import Banco.Iluminaçao;
 import Banco.IluminaçaoDao;
+import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -40,7 +41,7 @@ public class main {
         teste.setTempoAceso(300);
         ilu.persist(teste);
         IluminaçaoDao  manager = new IluminaçaoDao();
-        long soma = manager.soma1();
+        BigDecimal soma = manager.soma(1);
         //List<Iluminaçao> lista;
         //lista = manager.lista();
         System.out.println("Teste select sum: "+ soma);

@@ -5,6 +5,7 @@
  */
 package Banco;
 
+import java.math.BigDecimal;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -43,45 +44,15 @@ public class IluminaçaoDao {
         
     }
     
-<<<<<<< HEAD
-    public long soma(int numlampada){
+    public BigDecimal soma(int numlampada){
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjetoCompFisicaPU");
         EntityManager em = emf.createEntityManager();
     Query query = em.createNativeQuery("select sum(tempoaceso) from iluminaÇao where numlampada = "+numlampada);
-=======
-    public long soma1(){
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjetoCompFisicaPU");
-        EntityManager em = emf.createEntityManager();
-    Query query = em.createNativeQuery("select sum(tempoaceso) from iluminaÇao where numLampada = 1");
-    long soma;
-    soma = (long) query.getSingleResult();
+    BigDecimal soma;
+    soma =  (BigDecimal) query.getSingleResult();
     return soma;
     }
-    public long soma2(){
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjetoCompFisicaPU");
-        EntityManager em = emf.createEntityManager();
-    Query query = em.createNativeQuery("select sum(tempoaceso) from iluminaÇao where numLampada = 2");
-    long soma;
-    soma = (long) query.getSingleResult();
-    return soma;
-    }
-    public long soma3(){
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjetoCompFisicaPU");
-        EntityManager em = emf.createEntityManager();
-    Query query = em.createNativeQuery("select sum(tempoaceso) from iluminaÇao where numLampada = 3 ");
-    long soma;
-    soma = (long) query.getSingleResult();
-    return soma;
-    }
-    public long soma4(){
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjetoCompFisicaPU");
-        EntityManager em = emf.createEntityManager();
-    Query query = em.createNativeQuery("select sum(tempoaceso) from iluminaÇao where numLampada = 4");
->>>>>>> 7e6bc7adfa8080cb7d33af6263c90d9e545295e7
-    long soma;
-    soma = (long) query.getSingleResult();
-    return soma;
-    }
+
     
     public List<Iluminaçao> lista(){
     EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjetoCompFisicaPU");
