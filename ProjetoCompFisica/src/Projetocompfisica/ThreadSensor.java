@@ -64,6 +64,9 @@ public class ThreadSensor extends Thread {
 >>>>>>> 8b7c6d2e33c9c9af7efab1ac547d310506764e85
                 System.out.println("senso:" +sensor);
                 ThreadSensor.sleep(1000);
+<<<<<<< HEAD
+>>>>>>> e809bbc00fd52492df8b51e17f377b065febfd6a
+=======
 >>>>>>> e809bbc00fd52492df8b51e17f377b065febfd6a
             } catch (InterruptedException ex) {
                 Logger.getLogger(ThreadSensor.class.getName()).log(Level.SEVERE, null, ex);
