@@ -43,10 +43,34 @@ public class IluminaçaoDao {
         
     }
     
-    public long soma(){
+    public long soma1(){
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjetoCompFisicaPU");
         EntityManager em = emf.createEntityManager();
-    Query query = em.createNativeQuery("select sum(tempoaceso) from iluminaÇao");
+    Query query = em.createNativeQuery("select sum(tempoaceso) from iluminaÇao where numLampada = 1");
+    long soma;
+    soma = (long) query.getSingleResult();
+    return soma;
+    }
+    public long soma2(){
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjetoCompFisicaPU");
+        EntityManager em = emf.createEntityManager();
+    Query query = em.createNativeQuery("select sum(tempoaceso) from iluminaÇao where numLampada = 2");
+    long soma;
+    soma = (long) query.getSingleResult();
+    return soma;
+    }
+    public long soma3(){
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjetoCompFisicaPU");
+        EntityManager em = emf.createEntityManager();
+    Query query = em.createNativeQuery("select sum(tempoaceso) from iluminaÇao where numLampada = 3 ");
+    long soma;
+    soma = (long) query.getSingleResult();
+    return soma;
+    }
+    public long soma4(){
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjetoCompFisicaPU");
+        EntityManager em = emf.createEntityManager();
+    Query query = em.createNativeQuery("select sum(tempoaceso) from iluminaÇao where numLampada = 4");
     long soma;
     soma = (long) query.getSingleResult();
     return soma;
