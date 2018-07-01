@@ -13,10 +13,15 @@ import java.util.logging.Logger;
  *
  * @author wesle
  */
-public class ThreadSensor extends Thread{
+public class ThreadSensor extends Thread {
+        AcessaArduino arduino;
+    public ThreadSensor(AcessaArduino arduino) {
+       this.arduino = arduino;
+   }
+   
     @Override
     public void run(){
-        AcessaArduino arduino = new AcessaArduino();
+        
          try {
             
             System.out.println("porta detectada: sensor" + arduino.getPortaSelecionada());
@@ -31,9 +36,22 @@ public class ThreadSensor extends Thread{
                 sensor = arduino.getDadosArduino();
                 String[] splitado;
                 splitado=sensor.split(" =");
+<<<<<<< HEAD
+               
+                    System.out.println("split:"+splitado[1]);
+                
+=======
                 for(int i = 0;i<splitado.length; i++){
                     //System.out.println("split:"+ splitado[i]);
                 }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                //System.out.println("senso:" +sensor);
+                ThreadSensor.sleep(2000);
+=======
+>>>>>>> 9ffed0c5bb21225e88161a163e34cf47e8206a62
+>>>>>>> 8b7c6d2e33c9c9af7efab1ac547d310506764e85
                 System.out.println("senso:" +sensor);
                 ThreadSensor.sleep(1000);
             } catch (InterruptedException ex) {

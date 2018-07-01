@@ -26,6 +26,7 @@ public class Interface extends javax.swing.JFrame {
         long tempo4;
         IluminaçaoDao ilu = new IluminaçaoDao();
         Iluminaçao reg = new Iluminaçao();
+        ThreadSensor sensor;
         
         public void windowClosing(java.awt.event.WindowEvent e){
           acessaArduino.setDataToArduino(acessaArduino.getSerialPort(), "2");  
@@ -44,6 +45,8 @@ public class Interface extends javax.swing.JFrame {
               
         try {
             acessaArduino = new AcessaArduino();
+            sensor = new ThreadSensor(acessaArduino);
+            sensor.start();
             System.out.println("porta detectada: " + acessaArduino.getPortaSelecionada());
             
         } catch (Exception e) {
@@ -65,7 +68,12 @@ public class Interface extends javax.swing.JFrame {
         botao2 = new javax.swing.JToggleButton();
         botao3 = new javax.swing.JToggleButton();
         botao4 = new javax.swing.JToggleButton();
+<<<<<<< HEAD
+        jCheckBox1 = new javax.swing.JCheckBox();
+        label1 = new java.awt.Label();
+=======
         botao5 = new javax.swing.JToggleButton();
+>>>>>>> 9ffed0c5bb21225e88161a163e34cf47e8206a62
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -102,10 +110,24 @@ public class Interface extends javax.swing.JFrame {
             }
         });
 
+<<<<<<< HEAD
+        jCheckBox1.setText("Iluminação externa");
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
+
+        label1.setText("label1");
+        label1.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                label1ComponentShown(evt);
+=======
         botao5.setText("Luzes Jardim");
         botao5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botao5ActionPerformed(evt);
+>>>>>>> 9ffed0c5bb21225e88161a163e34cf47e8206a62
             }
         });
 
@@ -115,6 +137,19 @@ public class Interface extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(41, 41, 41)
+<<<<<<< HEAD
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jCheckBox1)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(botao2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botao3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botao4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botao1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(73, Short.MAX_VALUE))
+=======
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(botao5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botao4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -122,6 +157,7 @@ public class Interface extends javax.swing.JFrame {
                     .addComponent(botao2, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
                     .addComponent(botao1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+>>>>>>> 9ffed0c5bb21225e88161a163e34cf47e8206a62
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -135,8 +171,15 @@ public class Interface extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(botao4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+<<<<<<< HEAD
+                .addComponent(jCheckBox1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+=======
                 .addComponent(botao5, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
                 .addContainerGap())
+>>>>>>> 9ffed0c5bb21225e88161a163e34cf47e8206a62
         );
 
         jButton1.setText("Estatísticas");
@@ -161,7 +204,7 @@ public class Interface extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
                 .addGap(29, 29, 29))
         );
 
@@ -264,9 +307,21 @@ public class Interface extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_botao1ActionPerformed
 
+<<<<<<< HEAD
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        // TODO add your handling code here:
+        while(true){
+        System.out.println("PRINTA POHA");}
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void label1ComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_label1ComponentShown
+        
+    }//GEN-LAST:event_label1ComponentShown
+=======
     private void botao5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_botao5ActionPerformed
+>>>>>>> 9ffed0c5bb21225e88161a163e34cf47e8206a62
 
     /**
      * @param args the command line arguments
@@ -300,13 +355,7 @@ public class Interface extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Interface().setVisible(true);
-                String sensor;
-                sensor = this.acessaArduino.getDadosArduino();
-                String[] splitado;
-                splitado=sensor.split(" =");
-                for(int i = 0;i<splitado.length; i++){
-                    System.out.println("split:"+ splitado[i]);
-                }
+                
             }
         });
     }
@@ -318,6 +367,11 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JToggleButton botao4;
     private javax.swing.JToggleButton botao5;
     private javax.swing.JButton jButton1;
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JPanel jPanel1;
+<<<<<<< HEAD
+    private java.awt.Label label1;
+=======
+>>>>>>> 9ffed0c5bb21225e88161a163e34cf47e8206a62
     // End of variables declaration//GEN-END:variables
 }
