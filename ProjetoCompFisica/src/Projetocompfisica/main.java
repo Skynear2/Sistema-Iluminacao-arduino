@@ -42,6 +42,17 @@ public class main {
         System.out.println("teste banco");
         IluminaçaoDao  manager = new IluminaçaoDao();
         BigDecimal soma = manager.soma(1);
+<<<<<<< HEAD
+=======
+
+        //List<Iluminaçao> lista;
+<<<<<<< HEAD
+=======
+        //linao vei
+>>>>>>> bff9c37cb6e42d11efc3bd2e8c5d5eda94e84642
+        //lista = manager.lista();
+        
+>>>>>>> 9644f3f7e1d87e071549de75e4c543bb85d731dd
         System.out.println("Teste select sum: "+ soma);
         System.out.println("fim teste banco");
         ThreadSensor sensor = new ThreadSensor();

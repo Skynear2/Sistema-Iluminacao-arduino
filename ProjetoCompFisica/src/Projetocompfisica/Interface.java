@@ -219,6 +219,7 @@ public class Interface extends javax.swing.JFrame {
             tempo2=System.currentTimeMillis();
         }
         else{
+<<<<<<< HEAD
             acessaArduino.setDataToArduino(acessaArduino.getSerialPort(), "4");
             botao2.setForeground(Color.red);
             tempo2=tempo2-System.currentTimeMillis();
@@ -227,6 +228,19 @@ public class Interface extends javax.swing.JFrame {
             System.out.println(tempo2);
             reg.setNumLampada(2);
             reg.setTempoAceso(tempo2);
+=======
+        acessaArduino.setDataToArduino(acessaArduino.getSerialPort(), "8");
+            String sensor;
+            sensor = acessaArduino.getDadosArduino();
+            System.out.println("SENSOR INTERFACE : "+ sensor);
+            botao4.setForeground(Color.red);
+            tempo4=tempo4-System.currentTimeMillis();
+            tempo4=tempo4*-1;
+            tempo4=TimeUnit.MILLISECONDS.toSeconds(tempo4);
+            System.out.println(tempo4);
+            reg.setNumLampada(4);
+            reg.setTempoAceso(tempo4);
+>>>>>>> 9644f3f7e1d87e071549de75e4c543bb85d731dd
             ilu.persist(reg);
         }
     }//GEN-LAST:event_botao2ActionPerformed
@@ -286,6 +300,13 @@ public class Interface extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Interface().setVisible(true);
+                String sensor;
+                sensor = this.acessaArduino.getDadosArduino();
+                String[] splitado;
+                splitado=sensor.split(" =");
+                for(int i = 0;i<splitado.length; i++){
+                    System.out.println("split:"+ splitado[i]);
+                }
             }
         });
     }
