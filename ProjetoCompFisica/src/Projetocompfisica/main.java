@@ -23,8 +23,8 @@ public class main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //Interface i = new Interface();
-        //i.setVisible(true);
+        Interface i = new Interface();
+        i.setVisible(true);
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
         Date hora = Calendar.getInstance().getTime(); // Ou qualquer outra forma que tem
         String dataFormatada = sdf.format(hora);
@@ -46,18 +46,18 @@ public class main {
         BigDecimal soma = manager.soma(1);
 
         //List<Iluminaçao> lista;
-<<<<<<< HEAD
-=======
+
+
         //linao vei
->>>>>>> bff9c37cb6e42d11efc3bd2e8c5d5eda94e84642
+
         //lista = manager.lista();
         
         System.out.println("Teste select sum: "+ soma);
         //System.out.println("teste lista: "+ lista.get(1).getNumLampada() + lista.get(1).getTempoAceso());
         System.out.println("fim teste banco");
         
-        ThreadSensor sensor = new ThreadSensor();
-        sensor.start();
+        //ThreadSensor sensor = new ThreadSensor();
+        //sensor.start();
     }
     
 }
