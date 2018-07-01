@@ -46,13 +46,9 @@ public class main {
         BigDecimal soma = manager.soma(1);
 
 <<<<<<< HEAD
-<<<<<<< HEAD
 
 =======
 <<<<<<< HEAD
-=======
->>>>>>> e809bbc00fd52492df8b51e17f377b065febfd6a
-=======
 =======
 >>>>>>> e809bbc00fd52492df8b51e17f377b065febfd6a
         //List<Iluminaçao> lista;
@@ -67,9 +63,6 @@ public class main {
 =======
 >>>>>>> 9644f3f7e1d87e071549de75e4c543bb85d731dd
 >>>>>>> 8b7c6d2e33c9c9af7efab1ac547d310506764e85
-<<<<<<< HEAD
->>>>>>> e809bbc00fd52492df8b51e17f377b065febfd6a
-=======
 >>>>>>> e809bbc00fd52492df8b51e17f377b065febfd6a
         System.out.println("Teste select sum: "+ soma);
         System.out.println("fim teste banco");
