@@ -40,7 +40,7 @@ public class main {
         teste.setTempoAceso(300);
         ilu.persist(teste);
         IluminaçaoDao  manager = new IluminaçaoDao();
-        long soma = manager.soma();
+        long soma = manager.soma1();
         //List<Iluminaçao> lista;
         //lista = manager.lista();
         System.out.println("Teste select sum: "+ soma);
