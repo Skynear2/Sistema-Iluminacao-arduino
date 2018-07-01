@@ -41,11 +41,11 @@ public class main {
         teste.setTempoAceso(300);
         ilu.persist(teste);
         IluminaçaoDao  manager = new IluminaçaoDao();
-<<<<<<< HEAD
+
         BigDecimal soma = manager.soma(1);
-=======
-        long soma = manager.soma(1);
->>>>>>> e66b098aa79459cc6fbd0a6c84224948871ee69a
+
+        //long soma = manager.soma(1);
+
         //List<Iluminaçao> lista;
         //lista = manager.lista();
         System.out.println("Teste select sum: "+ soma);
