@@ -24,26 +24,29 @@ public class main {
      */
     public static void main(String[] args) {
         Interface i = new Interface();
+<<<<<<< HEAD
+=======
+        //COMENTAR ESTA PARTE 
+        IluminaçaoDao ilu = new IluminaçaoDao();
+        Iluminaçao reg = new Iluminaçao();
+        reg.setNumLampada(5);
+        reg.setTempoAceso(6);
+        ilu.persist(reg);
+        //COMENTAR ESTA PARTE
+        
+>>>>>>> 9ffed0c5bb21225e88161a163e34cf47e8206a62
         i.setVisible(true);
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
         Date hora = Calendar.getInstance().getTime(); // Ou qualquer outra forma que tem
         String dataFormatada = sdf.format(hora);
         System.out.println("Data:"+ dataFormatada);
-        
-        
-        
         Date data = new Date();
         System.out.println("Data Agora: "+data);
         System.out.println("teste banco");
         IluminaçaoDao  manager = new IluminaçaoDao();
-
-
-        
-
-        //long soma = manager.soma(1);
-
-
         BigDecimal soma = manager.soma(1);
+<<<<<<< HEAD
+=======
 
         //List<Iluminaçao> lista;
 
@@ -52,12 +55,17 @@ public class main {
 
         //lista = manager.lista();
         
+>>>>>>> 9644f3f7e1d87e071549de75e4c543bb85d731dd
         System.out.println("Teste select sum: "+ soma);
-        //System.out.println("teste lista: "+ lista.get(1).getNumLampada() + lista.get(1).getTempoAceso());
         System.out.println("fim teste banco");
+<<<<<<< HEAD
         
         //ThreadSensor sensor = new ThreadSensor();
         //sensor.start();
+=======
+        ThreadSensor sensor = new ThreadSensor();
+        sensor.start();
+>>>>>>> 9ffed0c5bb21225e88161a163e34cf47e8206a62
     }
     
 }

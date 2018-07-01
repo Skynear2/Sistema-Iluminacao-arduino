@@ -16,7 +16,7 @@ public class Grafico extends ApplicationFrame {
       super( applicationTitle );        
       JFreeChart barChart = ChartFactory.createBarChart(
          chartTitle,           
-         "",            
+         "Tabela de Consumo",            
          "Tempo Acesa (Minutos)",            
          createDataset(),          
          PlotOrientation.VERTICAL,           
@@ -38,17 +38,21 @@ public class Grafico extends ApplicationFrame {
       final DefaultCategoryDataset dataset = 
       new DefaultCategoryDataset( );
       
-      float t1=manager.soma(1).floatValue();
-       float t2=manager.soma(2).floatValue();
-        float t3=manager.soma(3).floatValue();
-         float t4=manager.soma(4).floatValue();
-          float t5=manager.soma(5).floatValue();
+      float t1=manager.soma(1).floatValue()/60;
+       float t2=manager.soma(2).floatValue()/60;
+        float t3=manager.soma(3).floatValue()/60;
+         float t4=manager.soma(4).floatValue()/60;
+          float t5=manager.soma(5).floatValue()/60;
        
-
+      if(t1>0)    
       dataset.addValue( t1, lquarto , consumo );        
+      if(t2>0)    
       dataset.addValue( t2 , lcozinha , consumo );        
+      if(t3>0)    
       dataset.addValue( t3 , lsala , consumo );  
+      if(t4>0)    
       dataset.addValue( t4 , lsuite , consumo );
+      if(t5>0)    
       dataset.addValue( t5 , "Jardim" , consumo ); 
           
 
