@@ -43,10 +43,48 @@ public class IluminaçaoDao {
         
     }
     
+<<<<<<< HEAD
     public long soma(int numLampada){
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjetoCompFisicaPU");
         EntityManager em = emf.createEntityManager();
     Query query = em.createNativeQuery("select sum(tempoaceso) from iluminaÇao where numLampada = "+numLampada);
+=======
+<<<<<<< HEAD
+    public long soma(int numlampada){
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjetoCompFisicaPU");
+        EntityManager em = emf.createEntityManager();
+    Query query = em.createNativeQuery("select sum(tempoaceso) from iluminaÇao where numlampada = "+numlampada);
+=======
+    public long soma1(){
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjetoCompFisicaPU");
+        EntityManager em = emf.createEntityManager();
+    Query query = em.createNativeQuery("select sum(tempoaceso) from iluminaÇao where numLampada = 1");
+    long soma;
+    soma = (long) query.getSingleResult();
+    return soma;
+    }
+    public long soma2(){
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjetoCompFisicaPU");
+        EntityManager em = emf.createEntityManager();
+    Query query = em.createNativeQuery("select sum(tempoaceso) from iluminaÇao where numLampada = 2");
+    long soma;
+    soma = (long) query.getSingleResult();
+    return soma;
+    }
+    public long soma3(){
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjetoCompFisicaPU");
+        EntityManager em = emf.createEntityManager();
+    Query query = em.createNativeQuery("select sum(tempoaceso) from iluminaÇao where numLampada = 3 ");
+    long soma;
+    soma = (long) query.getSingleResult();
+    return soma;
+    }
+    public long soma4(){
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjetoCompFisicaPU");
+        EntityManager em = emf.createEntityManager();
+    Query query = em.createNativeQuery("select sum(tempoaceso) from iluminaÇao where numLampada = 4");
+>>>>>>> 7e6bc7adfa8080cb7d33af6263c90d9e545295e7
+>>>>>>> 10cec84c352a3dd836aef02caeb4106dc2695a8c
     long soma;
     soma = (long) query.getSingleResult();
     return soma;
