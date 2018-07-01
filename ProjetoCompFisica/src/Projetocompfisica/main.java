@@ -35,11 +35,6 @@ public class main {
         Date data = new Date();
         System.out.println("Data Agora: "+data);
         System.out.println("teste banco");
-        IluminaçaoDao ilu = new IluminaçaoDao();
-        Iluminaçao teste = new Iluminaçao();
-        teste.setNumLampada(5);
-        teste.setTempoAceso(300);
-        ilu.persist(teste);
         IluminaçaoDao  manager = new IluminaçaoDao();
 
 
@@ -51,7 +46,10 @@ public class main {
         BigDecimal soma = manager.soma(1);
 
         //List<Iluminaçao> lista;
+<<<<<<< HEAD
+=======
         //linao vei
+>>>>>>> bff9c37cb6e42d11efc3bd2e8c5d5eda94e84642
         //lista = manager.lista();
         
         System.out.println("Teste select sum: "+ soma);
