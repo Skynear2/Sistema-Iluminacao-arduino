@@ -10,6 +10,7 @@ import Banco.IluminaçaoDao;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -38,7 +39,16 @@ public class main {
         teste.setNumLampada(5);
         teste.setTempoAceso(300);
         ilu.persist(teste);
+        IluminaçaoDao  manager = new IluminaçaoDao();
+        long soma = manager.soma();
+        //List<Iluminaçao> lista;
+        //lista = manager.lista();
+        System.out.println("Teste select sum: "+ soma);
+        //System.out.println("teste lista: "+ lista.get(1).getNumLampada() + lista.get(1).getTempoAceso());
         System.out.println("fim teste banco");
+        
+        ThreadSensor sensor = new ThreadSensor();
+        sensor.start();
     }
     
 }

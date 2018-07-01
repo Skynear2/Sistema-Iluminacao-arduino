@@ -5,9 +5,12 @@
  */
 package Banco;
 
+import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 /**
  *
@@ -29,5 +32,34 @@ public class IluminaçaoDao {
             em.close();
         }
     }
+   
+    public Iluminaçao find(Class<Iluminaçao> aClass, int l){
+         EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjetoCompFisicaPU");
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        Iluminaçao teste = em.find(aClass,l);
+        
+        return teste;
+        
+    }
+    
+    public long soma(){
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjetoCompFisicaPU");
+        EntityManager em = emf.createEntityManager();
+    Query query = em.createNativeQuery("select sum(tempoaceso) from iluminaÇao");
+    long soma;
+    soma = (long) query.getSingleResult();
+    return soma;
+    }
+    
+    public List<Iluminaçao> lista(){
+    EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjetoCompFisicaPU");
+    EntityManager em = emf.createEntityManager();
+    Query query = em.createNativeQuery("select  from iluminaÇao;");
+    return query.getResultList();
+  }
+    
+  
+    
     
 }

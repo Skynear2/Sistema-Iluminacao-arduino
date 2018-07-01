@@ -73,7 +73,7 @@ void loop() {
     
     sensorValue = analogRead(analogInPin); // Faz a leitura do pino analógico
   
-    Serial.print("sensor = " );            // Imprime o resultado no monitor serial
+    Serial.print("sensor =" );            // Imprime o resultado no monitor serial
     Serial.println(sensorValue);
     delay(500);
           
