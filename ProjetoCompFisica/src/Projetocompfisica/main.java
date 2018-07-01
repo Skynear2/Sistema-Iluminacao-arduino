@@ -44,6 +44,19 @@ public class main {
         System.out.println("teste banco");
         IluminaçaoDao  manager = new IluminaçaoDao();
         BigDecimal soma = manager.soma(1);
+<<<<<<< HEAD
+=======
+
+
+        //List<Iluminaçao> lista;
+
+
+        //linao vei
+
+        //lista = manager.lista();
+        
+
+>>>>>>> 65b334c589c3ca116d89a501fa2e81db1cb00c3a
         System.out.println("Teste select sum: "+ soma);
         System.out.println("fim teste banco");
         

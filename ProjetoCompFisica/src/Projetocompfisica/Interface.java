@@ -218,6 +218,12 @@ public class Interface extends javax.swing.JFrame {
         }
         else{
         acessaArduino.setDataToArduino(acessaArduino.getSerialPort(), "8");
+<<<<<<< HEAD
+=======
+            String sensor;
+            sensor = acessaArduino.getDadosArduino();
+            
+>>>>>>> 65b334c589c3ca116d89a501fa2e81db1cb00c3a
             botao4.setForeground(Color.red);
             tempo4=tempo4-System.currentTimeMillis();
             tempo4=tempo4*-1;
@@ -226,6 +232,7 @@ public class Interface extends javax.swing.JFrame {
             reg.setNumLampada(4);
             reg.setTempoAceso(tempo4);
             ilu.persist(reg);
+<<<<<<< HEAD
         }        // TODO add your handling code here:
     }//GEN-LAST:event_botao4ActionPerformed
 
@@ -234,6 +241,38 @@ public class Interface extends javax.swing.JFrame {
      g.setVisible(true);
        
     }//GEN-LAST:event_jButton1ActionPerformed
+=======
+        }
+    }
+
+    private void botao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao1ActionPerformed
+        if (botao1.isSelected()){
+            acessaArduino.setDataToArduino(acessaArduino.getSerialPort(), "1");
+            botao1.setForeground(Color.green);
+            tempo1=System.currentTimeMillis();
+        }
+        else{
+            acessaArduino.setDataToArduino(acessaArduino.getSerialPort(), "2");
+            botao1.setForeground(Color.red);
+            tempo1=tempo1-System.currentTimeMillis();
+            tempo1=tempo1*-1;
+            tempo1=TimeUnit.MILLISECONDS.toSeconds(tempo1);
+            System.out.println(tempo1);
+            reg.setNumLampada(1);
+            reg.setTempoAceso(tempo1);
+            ilu.persist(reg);
+        }
+    }//GEN-LAST:event_botao1ActionPerformed
+
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        // TODO add your handling code here:
+        
+    }
+
+    private void label1ComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_label1ComponentShown
+        
+    }/
+>>>>>>> 65b334c589c3ca116d89a501fa2e81db1cb00c3a
 
     /**
      * @param args the command line arguments
@@ -278,5 +317,12 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JToggleButton botao4;
     private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
+<<<<<<< HEAD
     // End of variables declaration//GEN-END:variables
 }
+=======
+    private java.awt.Label label1;
+
+    // End of variables declaration//
+}
+>>>>>>> 65b334c589c3ca116d89a501fa2e81db1cb00c3a
