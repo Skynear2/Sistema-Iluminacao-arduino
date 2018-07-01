@@ -25,17 +25,7 @@ public class Iluminaçao implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    
-    
-    @Temporal(TemporalType.TIME)
-    private Date horaacender;
-    @Temporal(TemporalType.TIME)
-    private Date horaapagar;
-    @Temporal(TemporalType.DATE)
-    private Date dataacende;
-    @Temporal(TemporalType.DATE)
-    private Date dataapaga;
-    
+    private int TempoAceso;
     private int numLampada;
 
     public int getNumLampada() {
@@ -46,43 +36,15 @@ public class Iluminaçao implements Serializable {
         this.numLampada = numLampada;
     }
 
-    public Date getDataapagar() {
-        return dataapaga;
+    public int getTempoAceso() {
+        return TempoAceso;
     }
 
-    public void setDataapagar(Date dataapagar) {
-        this.dataapaga = dataapaga;
-    }
-
-    public Date getDataacende() {
-        return dataacende;
-    }
-
-    public void setDataacende(Date dataacende) {
-        this.dataacende = dataacende;
-    }
-
-    public Date getDataapaga() {
-        return dataapaga;
-    }
-
-    public void setDataapaga(Date dataapaga) {
-        this.dataapaga = dataapaga;
+    public void setTempoAceso(int TempoAceso) {
+        this.TempoAceso = TempoAceso;
     }
 
     
-
-    public void setHoraacender(Date horaacender) {
-        this.horaacender = horaacender;
-    }
-
-    public Date getHoraapagar() {
-        return horaapagar;
-    }
-
-    public void setHoraapagar(Date horaapagar) {
-        this.horaapagar = horaapagar;
-    }
 
     public void setId(int id) {
         this.id = id;

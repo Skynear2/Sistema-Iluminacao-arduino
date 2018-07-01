@@ -36,10 +36,7 @@ public class main {
         IluminaçaoDao ilu = new IluminaçaoDao();
         Iluminaçao teste = new Iluminaçao();
         teste.setNumLampada(5);
-        teste.setHoraacender(data); // o tipo Data salva "Sat Jun 30 15:26:11 BRT 2018"  mas como os atributo Hora ta salvo como TIME so vai pega a hora, e os data vai pega a data
-        teste.setHoraapagar(data);
-        teste.setDataapaga(data);
-        teste.setDataacende(data);
+        teste.setTempoAceso(300);
         ilu.persist(teste);
         System.out.println("fim teste banco");
     }
