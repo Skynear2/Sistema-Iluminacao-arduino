@@ -43,10 +43,10 @@ public class IluminaçaoDao {
         
     }
     
-    public long soma(){
+    public long soma(int numlampada){
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjetoCompFisicaPU");
         EntityManager em = emf.createEntityManager();
-    Query query = em.createNativeQuery("select sum(tempoaceso) from iluminaÇao");
+    Query query = em.createNativeQuery("select sum(tempoaceso) from iluminaÇao where numlampada = "+numlampada);
     long soma;
     soma = (long) query.getSingleResult();
     return soma;
