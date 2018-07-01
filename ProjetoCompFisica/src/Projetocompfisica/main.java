@@ -23,38 +23,27 @@ public class main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //Interface i = new Interface();
-        //i.setVisible(true);
+        Interface i = new Interface();
+        //COMENTAR ESTA PARTE 
+        IluminaçaoDao ilu = new IluminaçaoDao();
+        Iluminaçao reg = new Iluminaçao();
+        reg.setNumLampada(5);
+        reg.setTempoAceso(6);
+        ilu.persist(reg);
+        //COMENTAR ESTA PARTE
+        
+        i.setVisible(true);
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
         Date hora = Calendar.getInstance().getTime(); // Ou qualquer outra forma que tem
         String dataFormatada = sdf.format(hora);
         System.out.println("Data:"+ dataFormatada);
-        
-        
-        
         Date data = new Date();
         System.out.println("Data Agora: "+data);
         System.out.println("teste banco");
         IluminaçaoDao  manager = new IluminaçaoDao();
-
-
-        
-
-        //long soma = manager.soma(1);
-
-
         BigDecimal soma = manager.soma(1);
-
-        //List<Iluminaçao> lista;
-<<<<<<< HEAD
-=======
-        //linao vei
->>>>>>> bff9c37cb6e42d11efc3bd2e8c5d5eda94e84642
-        //lista = manager.lista();
         System.out.println("Teste select sum: "+ soma);
-        //System.out.println("teste lista: "+ lista.get(1).getNumLampada() + lista.get(1).getTempoAceso());
         System.out.println("fim teste banco");
-        
         ThreadSensor sensor = new ThreadSensor();
         sensor.start();
     }

@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class Interface extends javax.swing.JFrame {
 
-        AcessaArduino acessaArduino;
+        public AcessaArduino acessaArduino;
         long tempo1;
         long tempo2;
         long tempo3;
@@ -65,7 +65,7 @@ public class Interface extends javax.swing.JFrame {
         botao2 = new javax.swing.JToggleButton();
         botao3 = new javax.swing.JToggleButton();
         botao4 = new javax.swing.JToggleButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
+        botao5 = new javax.swing.JToggleButton();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -102,10 +102,10 @@ public class Interface extends javax.swing.JFrame {
             }
         });
 
-        jRadioButton1.setText("jRadioButton1");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        botao5.setText("Luzes Jardim");
+        botao5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                botao5ActionPerformed(evt);
             }
         });
 
@@ -115,14 +115,13 @@ public class Interface extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(41, 41, 41)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButton1)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(botao2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(botao3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(botao4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(botao1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(89, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(botao5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botao4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botao3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botao2, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                    .addComponent(botao1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -135,9 +134,9 @@ public class Interface extends javax.swing.JFrame {
                 .addComponent(botao3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(botao4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addComponent(jRadioButton1)
-                .addGap(25, 25, 25))
+                .addGap(18, 18, 18)
+                .addComponent(botao5, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jButton1.setText("Estatísticas");
@@ -154,8 +153,8 @@ public class Interface extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(67, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -169,62 +168,11 @@ public class Interface extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao1ActionPerformed
-        if (botao1.isSelected()){
-            acessaArduino.setDataToArduino(acessaArduino.getSerialPort(), "1");
-            botao1.setForeground(Color.green);
-            tempo1=System.currentTimeMillis();
-            }
-        else{
-        acessaArduino.setDataToArduino(acessaArduino.getSerialPort(), "2");
-            botao1.setForeground(Color.red);
-            tempo1=tempo1-System.currentTimeMillis();
-            tempo1=tempo1*-1;
-            tempo1=TimeUnit.MILLISECONDS.toSeconds(tempo1);
-            System.out.println(tempo1);
-            reg.setNumLampada(1);
-            reg.setTempoAceso(tempo1);
-            ilu.persist(reg);
-        }
-    }//GEN-LAST:event_botao1ActionPerformed
-
-    private void botao2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao2ActionPerformed
-       if (botao2.isSelected()){
-            acessaArduino.setDataToArduino(acessaArduino.getSerialPort(), "3");
-            botao2.setForeground(Color.green);
-            tempo2=System.currentTimeMillis();
-        }
-        else{
-        acessaArduino.setDataToArduino(acessaArduino.getSerialPort(), "4");
-            botao2.setForeground(Color.red);
-            tempo2=tempo2-System.currentTimeMillis();
-            tempo2=tempo2*-1;
-            tempo2=TimeUnit.MILLISECONDS.toSeconds(tempo2);
-            System.out.println(tempo2);
-            reg.setNumLampada(2);
-            reg.setTempoAceso(tempo2);
-            ilu.persist(reg);
-        }       
-    }//GEN-LAST:event_botao2ActionPerformed
-
-    private void botao3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao3ActionPerformed
-        if (botao3.isSelected()){
-            acessaArduino.setDataToArduino(acessaArduino.getSerialPort(), "5");
-            botao3.setForeground(Color.green);
-            tempo3=System.currentTimeMillis();
-        }
-        else{
-        acessaArduino.setDataToArduino(acessaArduino.getSerialPort(), "6");
-            botao3.setForeground(Color.red);
-            tempo3=tempo3-System.currentTimeMillis();
-            tempo3=tempo3*-1;
-            tempo3=TimeUnit.MILLISECONDS.toSeconds(tempo3);
-            System.out.println(tempo3);
-            reg.setNumLampada(3);
-            reg.setTempoAceso(tempo3);
-            ilu.persist(reg);
-        }        // TODO add your handling code here:
-    }//GEN-LAST:event_botao3ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+     Grafico g= new Grafico("Teste", "Teste1");
+     g.setVisible(true);
+       
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void botao4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao4ActionPerformed
         if (botao4.isSelected()){
@@ -233,7 +181,7 @@ public class Interface extends javax.swing.JFrame {
             tempo4=System.currentTimeMillis();
         }
         else{
-        acessaArduino.setDataToArduino(acessaArduino.getSerialPort(), "8");
+            acessaArduino.setDataToArduino(acessaArduino.getSerialPort(), "8");
             botao4.setForeground(Color.red);
             tempo4=tempo4-System.currentTimeMillis();
             tempo4=tempo4*-1;
@@ -245,15 +193,66 @@ public class Interface extends javax.swing.JFrame {
         }        // TODO add your handling code here:
     }//GEN-LAST:event_botao4ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-     Grafico g= new Grafico("Teste", "Teste1");
-     g.setVisible(true);
-       
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void botao3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao3ActionPerformed
+        if (botao3.isSelected()){
+            acessaArduino.setDataToArduino(acessaArduino.getSerialPort(), "5");
+            botao3.setForeground(Color.green);
+            tempo3=System.currentTimeMillis();
+        }
+        else{
+            acessaArduino.setDataToArduino(acessaArduino.getSerialPort(), "6");
+            botao3.setForeground(Color.red);
+            tempo3=tempo3-System.currentTimeMillis();
+            tempo3=tempo3*-1;
+            tempo3=TimeUnit.MILLISECONDS.toSeconds(tempo3);
+            System.out.println(tempo3);
+            reg.setNumLampada(3);
+            reg.setTempoAceso(tempo3);
+            ilu.persist(reg);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_botao3ActionPerformed
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void botao2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao2ActionPerformed
+        if (botao2.isSelected()){
+            acessaArduino.setDataToArduino(acessaArduino.getSerialPort(), "3");
+            botao2.setForeground(Color.green);
+            tempo2=System.currentTimeMillis();
+        }
+        else{
+            acessaArduino.setDataToArduino(acessaArduino.getSerialPort(), "4");
+            botao2.setForeground(Color.red);
+            tempo2=tempo2-System.currentTimeMillis();
+            tempo2=tempo2*-1;
+            tempo2=TimeUnit.MILLISECONDS.toSeconds(tempo2);
+            System.out.println(tempo2);
+            reg.setNumLampada(2);
+            reg.setTempoAceso(tempo2);
+            ilu.persist(reg);
+        }
+    }//GEN-LAST:event_botao2ActionPerformed
+
+    private void botao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao1ActionPerformed
+        if (botao1.isSelected()){
+            acessaArduino.setDataToArduino(acessaArduino.getSerialPort(), "1");
+            botao1.setForeground(Color.green);
+            tempo1=System.currentTimeMillis();
+        }
+        else{
+            acessaArduino.setDataToArduino(acessaArduino.getSerialPort(), "2");
+            botao1.setForeground(Color.red);
+            tempo1=tempo1-System.currentTimeMillis();
+            tempo1=tempo1*-1;
+            tempo1=TimeUnit.MILLISECONDS.toSeconds(tempo1);
+            System.out.println(tempo1);
+            reg.setNumLampada(1);
+            reg.setTempoAceso(tempo1);
+            ilu.persist(reg);
+        }
+    }//GEN-LAST:event_botao1ActionPerformed
+
+    private void botao5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao5ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+    }//GEN-LAST:event_botao5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -296,8 +295,8 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JToggleButton botao2;
     private javax.swing.JToggleButton botao3;
     private javax.swing.JToggleButton botao4;
+    private javax.swing.JToggleButton botao5;
     private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JRadioButton jRadioButton1;
     // End of variables declaration//GEN-END:variables
 }
